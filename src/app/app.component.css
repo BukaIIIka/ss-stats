@@ -1,0 +1,27 @@
+.data-container {
+    width: 100%;
+    border-spacing: 0 1.5em;
+}
+
+.data-container tr {
+    border-bottom: 1px solid gray;
+}
+
+@media only screen and (max-width: 600px) {
+    .data-container {
+        border-spacing: 0 1em;
+    }
+}
+
+.data-element {
+    line-height: 1.5em;
+}
+
+.data-element ~ .data-element .value,
+.data-element .title {
+    font-size: small;
+}
+
+.data-element .title {
+    line-height: 1;
+}
