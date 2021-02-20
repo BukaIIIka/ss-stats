@@ -33,9 +33,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       lat: 24.1,
       zoom: 11
     };
-
     const map = L.map(this.mapContainer.nativeElement).setView([initialState.lng, initialState.lat], initialState.zoom);
-    L.tileLayer('https://api.mapbox.com/styles/v1/bukaiiika/ckklhqu6f3ssn17o6rs2wqtgk/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYnVrYWlpaWthIiwiYSI6ImNra2w1Y2Z3YjBhb28ycXJxZG16NWhheDcifQ.8EksqpcH1sNDs1_YwK6PLw', {
+    L.tileLayer('https://api.mapbox.com/styles/v1/bukaiiika/ckldmir601yq517s20k10ke6c/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYnVrYWlpaWthIiwiYSI6ImNra2w1Y2Z3YjBhb28ycXJxZG16NWhheDcifQ.8EksqpcH1sNDs1_YwK6PLw', {
       maxZoom: 18,
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
         '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -64,7 +63,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private openInfoBlock = (districtId) => {
     this.currentData = undefined;
     this.isLoading = true;
-    fetch(`http://192.168.0.111:8080/jason/${districtId}/`)
+    fetch(`http://212.71.232.17:80/jason/${districtId}/`)
       .then(response => {
         if (response.status === 200) {
           return response.json();
